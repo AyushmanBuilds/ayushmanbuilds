@@ -1,164 +1,227 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#f6f9ff" name="theme-color"/>
-<meta content="Meet Ayushman Acharya, the developer behind Ayushmanbuilds — a hands-on digital product studio based in Bengaluru." name="description"/>
-<meta content="index,follow" name="robots"/>
-<link href="about.html" rel="canonical"/>
-<link href="img/logo.png" rel="icon" type="image/png"/>
-<link href="img/logo.png" rel="apple-touch-icon"/>
-<meta content="About Ayushmanbuilds | Digital Product Studio" property="og:title"/>
-<meta content="Meet Ayushman Acharya, the developer behind Ayushmanbuilds — a hands-on digital product studio based in Bengaluru." property="og:description"/>
-<meta content="img/logo.png" property="og:image"/>
-<title>About Ayushmanbuilds | Digital Product Studio</title>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
-<script defer="" src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2B4CFF">
+<link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Meet Ayushman Acharya, founder of Ayushmanbuilds and a web developer, digital strategist and SEO-focused website builder creating custom websites, web apps and digital solutions for businesses in India.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Ayushman Acharya">
+<meta name="keywords" content="Ayushman Acharya, Ayushmanbuilds, Ayushman Builds, founder of Ayushmanbuilds, web developer Ayushman, website developer Ayushman, digital strategist Ayushman, web developer Bengaluru, website developer Bengaluru, digital agency Bengaluru, website development India">
+<link rel="canonical" href="https://ayushmanbuilds.vercel.app/about.html">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ayushman Acharya | Founder of Ayushmanbuilds">
+<meta property="og:description" content="Learn about Ayushman Acharya, the founder behind Ayushmanbuilds — custom web development, SEO, e-commerce and web applications for businesses across India.">
+<meta property="og:url" content="https://ayushmanbuilds.vercel.app/about.html">
+<meta property="og:site_name" content="Ayushmanbuilds">
+<meta property="og:image" content="https://ayushmanbuilds.vercel.app/img/ayushman-acharya.png">
+<meta property="og:image:alt" content="Ayushman Acharya, founder of Ayushmanbuilds">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ayushman Acharya | Founder of Ayushmanbuilds">
+<meta name="twitter:description" content="Founder of Ayushmanbuilds, web developer and digital strategist building custom digital experiences for businesses.">
+<meta name="twitter:image" content="https://ayushmanbuilds.vercel.app/img/ayushman-acharya.png">
+<title>Ayushman Acharya — Founder of Ayushmanbuilds | Web Developer</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://ayushmanbuilds.vercel.app/about.html#profile",
+  "url": "https://ayushmanbuilds.vercel.app/about.html",
+  "name": "About Ayushman Acharya — Founder of Ayushmanbuilds",
+  "description": "Profile of Ayushman Acharya, founder of Ayushmanbuilds, web developer and digital strategist.",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://ayushmanbuilds.vercel.app/#ayushman-acharya",
+    "name": "Ayushman Acharya",
+    "alternateName": ["Ayushman", "Ayushmanbuilds"],
+    "jobTitle": "Founder & Web Developer",
+    "description": "Ayushman Acharya is the founder of Ayushmanbuilds and a web developer and digital strategist focused on custom websites, web applications, e-commerce, SEO and automation for businesses.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://ayushmanbuilds.vercel.app/img/ayushman-acharya.png",
+      "contentUrl": "https://ayushmanbuilds.vercel.app/img/ayushman-acharya.png",
+      "caption": "Ayushman Acharya, founder of Ayushmanbuilds"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ayushmanbuilds",
+      "url": "https://ayushmanbuilds.vercel.app/"
+    },
+    "url": "https://ayushmanbuilds.vercel.app/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/ayushman-acharya-b03aa9370"
+    ],
+    "knowsAbout": [
+      "Web development",
+      "Website development",
+      "Web applications",
+      "E-commerce development",
+      "Search engine optimization",
+      "SEO",
+      "Digital strategy",
+      "Business automation"
+    ]
+  }
+}
+</script>
+
 </head>
-<body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="nav-wrap">
-<a aria-label="Ayushmanbuilds home" class="brand" href="index.html">
-<img alt="Ayushmanbuilds logo" class="brand-mark" src="img/logo.png"/>
-<span class="brand-word">AYUSHMAN<span>BUILDS</span></span>
-</a><button aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle" title="Switch theme" type="button"><span aria-hidden="true" class="theme-toggle-sun">☀</span><span aria-hidden="true" class="theme-toggle-moon">◐</span></button>
-<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
-<nav aria-label="Primary navigation" class="nav-links">
-<a data-page="index.html" href="index.html">Home</a>
-<div class="nav-services">
-<button class="nav-services-toggle" type="button">Services</button>
-<div class="services-menu">
-<a href="service-website-development.html"><strong>Website Development</strong><span>Custom, fast, conversion-led builds</span></a>
-<a href="service-seo-optimization.html"><strong>SEO Optimization</strong><span>Technical, on-page and local search</span></a>
-<a href="service-ecommerce-solutions.html"><strong>E-Commerce Solutions</strong><span>Razorpay, catalog, orders and admin</span></a>
-<a href="service-web-applications.html"><strong>Web Applications</strong><span>Portals, CRMs, dashboards and tools</span></a>
-<a href="service-website-revamps.html"><strong>Website Revamps</strong><span>Modernize without starting over</span></a>
-<a href="service-automation-workflows.html"><strong>Automation Workflows</strong><span>Connect tools and cut manual work</span></a>
-</div>
-</div>
-<a data-page="portfolio.html" href="portfolio.html">Work</a>
-<a data-page="about.html" href="about.html">About</a>
-<a data-page="testimonials.html" href="testimonials.html">Reviews</a>
-<a data-page="contact.html" href="contact.html">Contact</a>
-<a class="nav-cta" href="contact.html">Start a project →</a>
-</nav>
-</div>
+<body>
+<div id="scroll-progress"></div>
+<header id="topbar">
+  <a class="logo" href="index.html" aria-label="Ayushmanbuilds home">
+    <img src="img/logo.png" alt="Ayushmanbuilds logo" loading="lazy">
+    <span class="logo-text">Ayushman<em>builds</em></span>
+  </a>
+  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="topbar-links" id="topbar-nav">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="about.html" data-page="about.html" class="">About</a>
+    <a href="services.html" data-page="services.html" class="">Services</a>
+    <a href="portfolio.html" data-page="portfolio.html" class="">Work</a>
+    <a href="testimonials.html" data-page="testimonials.html" class="">Reviews</a>
+    <a class="topbar-cta" href="contact.html">Let's Talk →</a>
+  </nav>
 </header>
-<main id="main">
-<section class="subhero">
-<div class="container subhero-grid">
-<div class="reveal">
-<div class="kicker">About Ayushmanbuilds</div>
-<h1>The developer<br/><span class="grad">behind the build.</span></h1>
-<p class="lede">Ayushmanbuilds is the independent studio run by Ayushman Acharya — focused on modern web experiences, practical digital systems and growth-ready foundations.</p>
-<div class="pill-row"><span class="pill">Bengaluru</span><span class="pill">India</span><span class="pill">Since 2021</span><span class="pill">Direct collaboration</span></div>
-</div>
-<div class="subhero-art reveal">
-<div class="stack-glow"></div>
-<div class="stack">
-<div class="stack-layer"></div><div class="stack-layer"></div><div class="stack-layer"></div>
-<div class="stack-ui"><div class="stack-side"></div><div class="stack-main"><div class="stack-row"></div><div class="stack-row"></div><div class="stack-row"></div></div></div>
-</div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="detail-grid">
-<div class="detail-copy reveal">
-<div class="kicker">The person behind every pixel</div>
-<h2>Built around the<br/><span class="grad">business, not a template.</span></h2>
-<p class="lede" style="margin-top:20px;">I'm Ayushman Acharya, a self-driven web developer and digital strategist. I work under the brand Ayushmanbuilds — building modern web experiences for businesses that want to grow online.</p>
-<p class="lede" style="margin-top:18px;">From a focused landing page to a full e-commerce system with payment integration, the aim is the same: make the experience useful, credible, fast and easy to maintain.</p>
-</div>
-<div class="detail-media reveal">
-<div class="detail-window">
-<div class="window-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><div class="window-url">ayushmanbuilds.com / studio</div></div>
-<div class="window-content">
-<div class="w-line blue"></div><div class="w-line short"></div><div class="w-line"></div>
-<div class="window-cards"><div class="window-card"></div><div class="window-card"></div><div class="window-card"></div><div class="window-card"></div><div class="window-card"></div><div class="window-card"></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section-tight">
-<div class="container">
-<div class="section-head reveal">
-<div><div class="kicker">Working principles</div><h2 style="margin-top:16px;">A compact studio<br/><span class="grad">with a high bar.</span></h2></div>
-<div class="right"><p>The current practice is deliberately hands-on: direct communication, custom code, SEO-aware structure and support after launch.</p></div>
-</div>
-<div class="grid-3">
-<article class="card service-card reveal"><div class="service-index">01</div><div class="service-icon">✦</div><h3>Custom, not canned</h3><p>Every website is built from scratch rather than assembled from a generic page-builder template.</p></article>
-<article class="card service-card reveal"><div class="service-index">02</div><div class="service-icon">⌁</div><h3>Built to be found</h3><p>Semantic structure, metadata, page speed and technical SEO are considered from the beginning.</p></article>
-<article class="card service-card reveal"><div class="service-index">03</div><div class="service-icon">↗</div><h3>One person, accountable</h3><p>You work directly with the person writing the code, configuring the backend and managing deployment.</p></article>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="section-head reveal">
-<div><div class="kicker">Capabilities</div><h2>From first screen<br/><span class="grad">to full system.</span></h2></div>
-</div>
-<div class="feature-grid">
-<div class="feature reveal"><div class="feature-icon">01</div><strong>Custom website engineering</strong><span>Responsive builds, semantic markup, optimized assets and integrations.</span></div>
-<div class="feature reveal"><div class="feature-icon">02</div><strong>SEO foundations</strong><span>Technical audits, on-page improvements, schema and local search setup.</span></div>
-<div class="feature reveal"><div class="feature-icon">03</div><strong>Commerce systems</strong><span>Razorpay checkout, product catalogues, order tracking, coupons and admin tools.</span></div>
-<div class="feature reveal"><div class="feature-icon">04</div><strong>Business applications</strong><span>Firebase-backed dashboards, authentication, billing and real-time data.</span></div>
-<div class="feature reveal"><div class="feature-icon">05</div><strong>Modernization</strong><span>Website revamps that preserve useful content while improving experience and speed.</span></div>
-<div class="feature reveal"><div class="feature-icon">06</div><strong>Workflow automation</strong><span>Forms, sheets, WhatsApp, email and CRM systems connected into one flow.</span></div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="cta-block reveal">
-<div class="kicker">Let's work together</div>
-<h2 style="margin-top:16px;">If it matters to your business,<br/><span class="grad">it deserves the right build.</span></h2>
-<p>Bring the challenge. We will map the right digital system around it.</p>
-<div class="cta-actions"><a class="btn btn-primary" href="contact.html">Start a project ↗</a><a class="btn btn-ghost" href="services.html">Explore services</a></div>
-</div>
-</div>
+<main>
+<div class="wrap"><p class="crumb"><a href="index.html">Home</a> / About</p></div><section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60');"><div class="wrap">
+  <p class="eyebrow">About Ayushmanbuilds</p>
+  <h1>The developer behind<br><em>every pixel</em></h1>
+  <p>A closer look at who builds your website, how, and why it matters.</p>
+</div></section><section id="about" aria-labelledby="founder-heading">
+  <div class="wrap about-grid founder-grid">
+    <div class="reveal founder-copy">
+      <p class="eyebrow">About the founder</p>
+      <h2 id="founder-heading" class="title">Meet <em>Ayushman Acharya</em></h2>
+      <p class="sub" style="max-width:680px;">I'm Ayushman Acharya, the founder of Ayushmanbuilds, a web development and digital growth brand focused on building practical digital experiences for businesses. I combine hands-on development with SEO, performance, conversion-focused design and business automation.</p>
+      <p class="sub" style="max-width:680px;margin-top:18px;">I personally work across the full project lifecycle — understanding the business, planning the experience, writing the front-end and back-end code, integrating services, optimizing the site for search engines, and deploying the finished product. The goal is not to deliver another template, but to create a website or web application that has a clear purpose and can grow with the business.</p>
+      <p class="sub" style="max-width:680px;margin-top:18px;">Through Ayushmanbuilds, I work on custom websites, e-commerce platforms, web applications, SEO optimization, website revamps and automation workflows for businesses across India. I also build integrations using tools such as Firebase, Razorpay and EmailJS when a project needs more than a static website.</p>
+      <p class="sub" style="max-width:680px;margin-top:18px;">My approach is straightforward: understand what the business needs, build cleanly, keep the experience fast and mobile-friendly, make the important information easy for customers and search engines to understand, and provide support after launch.</p>
+      <ul class="about-list" aria-label="Ayushman Acharya's focus areas">
+        <li>Founder of Ayushmanbuilds</li>
+        <li>Custom web development with zero templates</li>
+        <li>Technical, on-page and local SEO</li>
+        <li>Web applications, e-commerce and business systems</li>
+        <li>Firebase, Razorpay &amp; EmailJS integrations</li>
+        <li>Responsive, performance-focused and mobile-first builds</li>
+      </ul>
+    </div>
+    <figure class="about-portrait founder-photo reveal">
+      <img src="img/ayushman-acharya.png"
+           alt="Ayushman Acharya, founder of Ayushmanbuilds and web developer"
+           width="900" height="900"
+           loading="eager"
+           fetchpriority="high"
+           decoding="async">
+      <figcaption class="about-badge">📍 Ayushman Acharya · Founder, Ayushmanbuilds</figcaption>
+    </figure>
+  </div>
+</section><section id="approach" style="background:var(--paper-tint);">
+  <div class="wrap">
+    <p class="eyebrow reveal">How I work</p>
+    <h2 class="title reveal">An approach built on<br><em>clarity, not guesswork</em></h2>
+    <div class="value-grid reveal">
+      <div class="value-card"><div class="vi">🎯</div><h4>Goal-first thinking</h4><p>Every build starts with your business goal, not a template — design decisions follow from what actually converts.</p></div>
+      <div class="value-card"><div class="vi">🛠️</div><h4>Hands-on execution</h4><p>I write the code, configure the backend, and manage deployment myself — no outsourcing, no hand-offs.</p></div>
+      <div class="value-card"><div class="vi">📈</div><h4>Built to grow</h4><p>Sites are structured for SEO and scale from day one, so they keep performing long after launch.</p></div>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat-cell"><div class="num"><span class="count" data-count="30">0</span><span>+</span></div><div class="lbl">Projects delivered</div></div>
+      <div class="stat-cell"><div class="num"><span class="count" data-count="3">0</span><span>+</span></div><div class="lbl">Years experience</div></div>
+      <div class="stat-cell"><div class="num"><span class="count" data-count="6">0</span></div><div class="lbl">Core services</div></div>
+      <div class="stat-cell"><div class="num"><span class="count" data-count="100">0</span><span>%</span></div><div class="lbl">On-time delivery</div></div>
+    </div>
+    <div class="cta-banner reveal">
+      <h3>Curious what your business would look like with a site built this way?</h3>
+      <a class="btn-primary" href="contact.html" style="text-decoration:none;">Start a Project →</a>
+    </div>
+  </div>
 </section>
 </main>
-<footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a class="brand" href="index.html">
-<img alt="Ayushmanbuilds logo" class="brand-mark" src="img/logo.png"/>
-<span class="brand-word">AYUSHMAN<span>BUILDS</span></span>
-</a>
-<p style="margin-top:16px;">Independent digital product studio for custom websites, e-commerce systems, web applications, SEO and workflow automation.</p>
-</div>
-<div>
-<h4>Explore</h4>
-<a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Work</a><a href="testimonials.html">Reviews</a>
-</div>
-<div>
-<h4>Services</h4>
-<a href="service-website-development.html">Website Development</a>
-<a href="service-seo-optimization.html">SEO Optimization</a>
-<a href="service-ecommerce-solutions.html">E-Commerce</a>
-<a href="service-web-applications.html">Web Applications</a>
-</div>
-<div>
-<h4>Contact</h4>
-<a href="tel:+918018017529">+91 80180 17529</a>
-<a href="https://wa.me/918018017529" rel="noopener" target="_blank">WhatsApp</a>
-<a href="contact.html">Request a quote</a>
-<p style="margin-top:14px;">Bengaluru, Karnataka · India</p>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© 2026 Ayushmanbuilds. Built from scratch.</span>
-<span>Designing systems. Shipping momentum.</span>
-</div>
-</div>
+<footer>
+  <div class="wrap footer-top">
+    <div>
+      <div class="footer-logo">Ayushman<em>builds</em></div>
+      <p class="footer-tag">Web development &amp; digital growth for businesses across India.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Work</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Get in touch</div>
+      <p style="font-size:13.5px;margin-bottom:14px;"><a href="tel:+918018017529" style="text-decoration:none;">+91 80180 17529</a><br>Whitefield, bengaluru</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>© 2026 Ayushmanbuilds · All rights reserved</div>
+    <div>bengaluru, Karnataka</div>
+  </div>
 </footer>
-<button aria-label="Back to top" class="back-top">↑</button>
-</body></html>
+<a id="wa-fab" href="https://wa.me/918018017529" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button id="back-to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12141C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<div id="chat-fab">
+  <button id="chat-toggle" aria-label="Open chat" aria-expanded="false">
+    <div id="chat-badge">1</div>
+    <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="chat-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<div id="chat-window" role="dialog" aria-label="Chat assistant">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div><div class="chat-header-name">Ayushman's Assistant</div><div class="chat-header-status"><div class="chat-status-dot"></div>Online · Replies instantly</div></div>
+    <button class="chat-header-close" onclick="toggleChat(false)">✕</button>
+  </div>
+  <div class="chat-chips">
+    <button class="chip" onclick="sendChip('Get a Quote')">💬 Quote</button>
+    <button class="chip" onclick="sendChip('Services')">🛠️ Services</button>
+    <button class="chip" onclick="sendChip('How long')">⏱️ Timeline</button>
+    <button class="chip" onclick="sendChip('Contact')">📞 Contact</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Ask me anything..." maxlength="200">
+    <button id="chat-send" onclick="chatSend()"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg></button>
+  </div>
+</div>
+<div id="plight-overlay">
+  <div class="plight-box">
+    <button id="plight-close">✕</button>
+    <img id="plight-img" alt="">
+    <div class="plight-info">
+      <div class="proj-tag" id="plight-tag"></div>
+      <h3 id="plight-title" style="font-family:var(--font-display);font-weight:600;font-size:22px;margin:6px 0 10px;"></h3>
+      <p id="plight-desc" style="font-size:14.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:16px;"></p>
+      <a id="plight-visit" href="#" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;display:inline-flex;">Visit live site →</a>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
