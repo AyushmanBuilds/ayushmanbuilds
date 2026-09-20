@@ -1,4 +1,3 @@
-
 (() => {
   const $ = (s, root=document) => root.querySelector(s);
   const $$ = (s, root=document) => [...root.querySelectorAll(s)];
@@ -382,3 +381,104 @@
     start();
   });
 })();
+
+
+/* =========================================================
+   Home services — Ferris-wheel scroll motion
+   Rows ride a big circular arc as they pass the viewport centre,
+   the background wheel turns with scroll, gondolas stay upright.
+   ========================================================= */
+(function initFerrisServices(){
+  const wrap = document.querySelector('[data-ferris]');
+  if (!wrap) return;
+  const rows = Array.from(wrap.querySelectorAll('.home-service-row'));
+  const cars = Array.from(wrap.querySelectorAll('.ferris-car'));
+  if (rows.length < 2) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const small  = window.matchMedia('(max-width: 820px)');
+  const clamp  = (v, a, b) => Math.min(b, Math.max(a, v));
+  let ticking = false;
+
+  const reset = () => {
+    rows.forEach(r => { r.style.transform = ''; r.style.opacity = ''; r.classList.remove('is-active'); });
+    wrap.style.setProperty('--ferris-rot', '0deg');
+  };
+
+  const update = () => {
+    ticking = false;
+    if (reduce.matches) { reset(); return; }
+
+    const vh  = window.innerHeight;
+    const mid = vh / 2;
+    const isSmall = small.matches;
+
+    // Tunables
+    const R      = isSmall ? 520 : 820;    // arc radius (px)
+    const amp    = isSmall ? .07 : .42;    // how far rows swing sideways
+    const sway   = isSmall ? .8  : 2.2;    // max gondola tilt (deg)
+
+    const centers = rows.map(r => {
+      const b = r.getBoundingClientRect();
+      return b.top + b.height / 2;
+    });
+
+    rows.forEach((row, i) => {
+      const d    = centers[i] - mid;                      // + below centre, − above
+      const th   = clamp(d / R, -1.1, 1.1);               // angle on the wheel
+      const x    = -R * amp * (1 - Math.cos(th));         // slide along the arc
+      const tilt = clamp(d / vh, -1, 1) * sway;           // gentle gondola sway
+      const away = Math.min(Math.abs(d) / (vh * .95), 1);
+      row.style.transform = `translate3d(${x.toFixed(1)}px,0,0) rotate(${tilt.toFixed(2)}deg)`;
+      row.style.opacity   = (1 - away * .5).toFixed(3);
+    });
+
+    // Fractional index of the row currently at the viewport centre
+    const n = rows.length;
+    let f;
+    if (mid <= centers[0]) {
+      f = (mid - centers[0]) / (centers[1] - centers[0]);
+    } else if (mid >= centers[n - 1]) {
+      f = (n - 1) + (mid - centers[n - 1]) / (centers[n - 1] - centers[n - 2]);
+    } else {
+      f = 0;
+      for (let i = 0; i < n - 1; i++) {
+        if (mid >= centers[i] && mid < centers[i + 1]) {
+          f = i + (mid - centers[i]) / (centers[i + 1] - centers[i]);
+          break;
+        }
+      }
+    }
+    f = clamp(f, -.6, n - 1 + .6);
+    wrap.style.setProperty('--ferris-rot', (-f * 60).toFixed(2) + 'deg');
+
+    const active = clamp(Math.round(f), 0, n - 1);
+    rows.forEach((r, i) => r.classList.toggle('is-active', i === active));
+    cars.forEach((c, i) => c.classList.toggle('on', i === active));
+  };
+
+  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+
+  // Only do work while the section is near the screen
+  let listening = false;
+  const on  = () => { if (listening) return; listening = true;  window.addEventListener('scroll', request, {passive:true}); window.addEventListener('resize', request); request(); };
+  const off = () => { if (!listening) return; listening = false; window.removeEventListener('scroll', request); window.removeEventListener('resize', request); };
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? on() : off()), {rootMargin:'300px 0px'}).observe(wrap);
+  } else on();
+
+  reduce.addEventListener?.('change', request);
+  small.addEventListener?.('change', () => { reset(); request(); });
+  window.addEventListener('load', request);
+})();
+
+/* CITY:START */
+/* Berhampur city scene — only animate while it is on screen */
+(function initCityScene(){
+  const sec = document.getElementById('berhampur-seo');
+  if (!sec || !('IntersectionObserver' in window)) { sec && sec.classList.add('is-live'); return; }
+  new IntersectionObserver(es => es.forEach(e => sec.classList.toggle('is-live', e.isIntersecting)), {rootMargin:'120px 0px'}).observe(sec);
+})();
+
+/* CITY:END */
