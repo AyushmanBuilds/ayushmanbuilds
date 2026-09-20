@@ -482,3 +482,66 @@
 })();
 
 /* CITY:END */
+
+/* HERO:START */
+/* Hero city — mouse + scroll parallax, and pause when off-screen */
+(function initHeroCity(){
+  const hero = document.querySelector('.hero-city');
+  const box  = hero && hero.querySelector('.hc-box');
+  if (!box) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+
+  // one floating tooltip (sits above the copy, follows the parallax)
+  const tip = document.createElement('div');
+  tip.className = 'hc-tip'; tip.setAttribute('aria-hidden', 'true');
+  hero.appendChild(tip);
+  let active = null;
+  const place = () => {
+    if (!active) return;
+    const r = active.getBoundingClientRect(), h = hero.getBoundingClientRect();
+    tip.style.left = (r.left + r.width / 2 - h.left) + 'px';
+    tip.style.top  = (r.top - h.top) + 'px';
+  };
+  const show = a => {
+    const t = a.querySelector('.hit-tip'); if (!t) return;
+    active = a; tip.innerHTML = t.innerHTML;
+    tip.style.setProperty('--c', getComputedStyle(a).getPropertyValue('--c'));
+    place(); tip.classList.add('on');
+  };
+  const hide = () => { active = null; tip.classList.remove('on'); };
+  hero.querySelectorAll('.hit').forEach(a => {
+    a.addEventListener('pointerenter', () => show(a));
+    a.addEventListener('pointerleave', hide);
+    a.addEventListener('focus', () => show(a));
+    a.addEventListener('blur', hide);
+  });
+
+  const frame = () => {
+    raf = 0;
+    cx += (tx - cx) * .08; cy += (ty - cy) * .08;
+    box.style.setProperty('--mx', cx.toFixed(3));
+    box.style.setProperty('--my', cy.toFixed(3));
+    box.style.setProperty('--sy', reduce.matches ? 0 : Math.min(window.scrollY, hero.offsetHeight).toFixed(0));
+    place();
+    if (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) raf = requestAnimationFrame(frame);
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(frame); };
+
+  hero.addEventListener('pointermove', e => {
+    if (reduce.matches || e.pointerType === 'touch') return;
+    const r = hero.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width - .5) * 2;
+    ty = ((e.clientY - r.top) / r.height - .5) * 2;
+    kick();
+  }, {passive:true});
+  hero.addEventListener('pointerleave', () => { tx = ty = 0; kick(); });
+  window.addEventListener('scroll', kick, {passive:true});
+  kick();
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(es => es.forEach(e => hero.classList.toggle('is-live', e.isIntersecting)), {rootMargin:'80px 0px'}).observe(hero);
+  } else hero.classList.add('is-live');
+})();
+
+/* HERO:END */
