@@ -1150,45 +1150,246 @@ html[data-theme="dark"] .feature-stage-track{background:#223047}
   .feature-stage-caption{display:none}
 }
 
-
 /* =========================================================
-   Founder profile — Ayushman Acharya
-   Added without removing or rewriting the existing stylesheet.
+   CLEAN VISUAL OVERRIDES
+   Remove the old browser/skeleton visual globally without
+   affecting the rest of the site's layout or components.
+   Founder visual gets a borderless animated blue glow.
    ========================================================= */
-.founder-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
-  gap:56px;
-  align-items:center;
+
+/* The old browser/skeleton animation appears as a standalone
+   window-content block on the service pages. Remove it globally. */
+.window-content{
+  display:none !important;
 }
-.founder-copy .sub{max-width:680px;}
-.founder-photo{
+
+/* On the Berhampur landing page the old browser mockup is wrapped
+   inside detail-media. Hide only that obsolete visual container. */
+.detail-media:has(.detail-window){
+  display:none !important;
+}
+
+/* Founder area: remove the inherited square/panel border and
+   replace it with a soft, animated blue atmosphere. */
+.detail-media.founder-media{
+  min-height:470px;
+  border:0 !important;
+  border-color:transparent !important;
+  border-radius:0;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:0;
+  overflow:visible;
+  isolation:isolate;
+}
+
+.detail-media.founder-media:before{
+  content:"";
+  position:absolute;
+  inset:auto;
+  left:50%;
+  top:50%;
+  width:430px;
+  height:430px;
+  transform:translate(-50%,-50%);
+  border:0 !important;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(36,120,255,.22) 0%, rgba(36,120,255,.13) 30%, rgba(53,213,255,.08) 48%, rgba(36,120,255,0) 72%);
+  filter:blur(10px);
+  opacity:.95;
+  pointer-events:none;
+  z-index:0;
+  animation:founderGlowPulse 5.5s ease-in-out infinite;
+}
+
+.detail-media.founder-media:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:330px;
+  height:330px;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(61,142,255,.16);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 28% 30%, rgba(53,213,255,.12), transparent 28%),
+    radial-gradient(circle at 72% 68%, rgba(36,120,255,.12), transparent 30%);
+  box-shadow:
+    0 0 45px rgba(36,120,255,.12),
+    0 0 95px rgba(36,120,255,.10);
+  pointer-events:none;
+  z-index:0;
+  animation:founderHaloRotate 14s linear infinite;
+}
+
+.founder-photo-wrap{
   position:relative;
-  aspect-ratio:1 / 1;
-  width:min(100%,520px);
-  justify-self:end;
-  border-radius:28px;
-  overflow:hidden;
-  background:linear-gradient(145deg,var(--panel-2),var(--panel));
-  border:1px solid var(--line-strong);
-  box-shadow:var(--shadow);
+  z-index:2;
+  width:min(390px,86%);
+  aspect-ratio:1/1;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:50%;
+  background:transparent !important;
+  display:grid;
+  place-items:center;
+  box-shadow:0 24px 65px rgba(18,50,93,.14) !important;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
 }
-.founder-photo img{
-  display:block;
+
+.founder-photo{
   width:100%;
   height:100%;
+  display:block;
   object-fit:cover;
-  object-position:center;
+  border-radius:50%;
+  object-position:center top;
+  border:0 !important;
+  box-shadow:0 20px 55px rgba(18,50,93,.18) !important;
 }
-.founder-photo .about-badge{
+
+.founder-media:hover .founder-photo-wrap{
+  transform:translateY(-7px) scale(1.018);
+  box-shadow:0 30px 78px rgba(24,84,160,.22) !important;
+}
+
+@keyframes founderGlowPulse{
+  0%,100%{transform:translate(-50%,-50%) scale(.94);opacity:.72}
+  50%{transform:translate(-50%,-50%) scale(1.06);opacity:1}
+}
+
+@keyframes founderHaloRotate{
+  from{transform:translate(-50%,-50%) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+
+html[data-theme="dark"] .founder-photo-wrap{
+  background:transparent !important;
+  box-shadow:0 28px 75px rgba(0,0,0,.36) !important;
+}
+
+html[data-theme="dark"] .founder-photo{
+  box-shadow:0 22px 60px rgba(0,0,0,.38) !important;
+}
+
+@media (max-width:620px){
+  .detail-media.founder-media{
+    min-height:390px;
+  }
+  .detail-media.founder-media:before{
+    width:330px;
+    height:330px;
+  }
+  .detail-media.founder-media:after{
+    width:255px;
+    height:255px;
+  }
+  .founder-photo-wrap{
+    width:min(300px,82%);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .detail-media.founder-media:before,
+  .detail-media.founder-media:after{
+    animation:none !important;
+  }
+}
+
+
+/* Final founder presentation: circle + blue glow only. */
+.detail-media.founder-media{
+  display:grid !important;
+  place-items:center !important;
+  width:100%;
+  min-height:470px !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:relative !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  transform:none !important;
+  isolation:isolate;
+}
+.detail-media.founder-media::before{
+  content:"";
   position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  z-index:2;
-  text-align:center;
+  left:50%;
+  top:50%;
+  width:430px;
+  height:430px;
+  transform:translate(-50%,-50%);
+  border:0 !important;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(20,92,245,.22) 0%,
+    rgba(42,139,255,.16) 28%,
+    rgba(34,199,242,.09) 48%,
+    rgba(20,92,245,0) 72%);
+  filter:blur(18px);
+  opacity:.95;
+  z-index:-1;
+  pointer-events:none;
+  animation:founderGlowPulse 5.5s ease-in-out infinite;
 }
-@media (max-width:860px){
-  .founder-grid{grid-template-columns:1fr;gap:34px;}
-  .founder-photo{justify-self:center;width:min(100%,520px);}
+.detail-media.founder-media::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:360px;
+  height:360px;
+  transform:translate(-50%,-50%);
+  border:0 !important;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(20,92,245,.10) 0%,
+    rgba(20,92,245,.05) 42%,
+    rgba(20,92,245,0) 72%);
+  filter:blur(4px);
+  opacity:.9;
+  z-index:-1;
+  pointer-events:none;
+}
+.founder-photo-wrap{
+  position:relative !important;
+  z-index:2 !important;
+  width:min(390px,86%) !important;
+  aspect-ratio:1/1;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  display:block !important;
+  box-shadow:none !important;
+  transform:none !important;
+  transition:transform .5s var(--ease),filter .5s var(--ease);
+}
+.founder-photo{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover;
+  object-position:center top;
+  border:0 !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  box-shadow:
+    0 18px 50px rgba(18,50,93,.16),
+    0 0 38px rgba(20,92,245,.16) !important;
+}
+.detail-media.founder-media:hover .founder-photo-wrap{
+  transform:translateY(-7px) scale(1.018) !important;
+}
+@media (max-width:620px){
+  .detail-media.founder-media{min-height:390px !important;}
+  .detail-media.founder-media::before{width:330px;height:330px;}
+  .detail-media.founder-media::after{width:270px;height:270px;}
+  .founder-photo-wrap{width:min(300px,82%) !important;}
 }
