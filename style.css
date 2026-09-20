@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root{
@@ -1814,3 +1815,65 @@ html[data-theme="dark"] .no{opacity:1}
 }
 
 /* HERO:END */
+
+/* SOCIAL:START */
+/* =========================================================
+   SOCIAL — Instagram + LinkedIn (navbar + footer), brand colours
+   ========================================================= */
+.soc,.soc-btn{--ig:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%);--li:#0a66c2}
+.soc-ig{background:var(--ig)}
+.soc-in{background:var(--li)}
+
+/* navbar: compact icon buttons on desktop */
+.nav-social{display:flex;align-items:center;gap:8px;margin:0 8px 0 10px}
+.soc{position:relative;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;color:#fff;
+  border:1px solid rgba(255,255,255,.28);box-shadow:0 8px 18px rgba(18,50,93,.16);
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),filter .28s var(--ease)}
+.soc svg{display:block;width:20px;height:20px}
+.soc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.soc-ig:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 14px 28px rgba(214,36,159,.38);filter:saturate(1.15)}
+.soc-in:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 14px 28px rgba(10,102,194,.42);filter:brightness(1.08)}
+.soc:focus-visible,.footer a.soc-btn:focus-visible{outline:2px solid #145cf5;outline-offset:3px}
+html[data-theme="dark"] .soc{border-color:rgba(255,255,255,.16);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+
+/* footer: labelled buttons */
+.footer-social{margin-top:22px}
+.footer-social-label{display:block;margin-bottom:12px;font:700 11px/1 var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:#6b7c95}
+.footer-social-row{display:flex;flex-wrap:wrap;gap:10px}
+.footer a.soc-btn{display:inline-flex;flex-direction:row;align-items:center;gap:10px;margin:0;padding:11px 18px 11px 14px;border-radius:13px;color:#fff;
+  font:700 13px/1 var(--font-ui);letter-spacing:.02em;border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 22px rgba(18,50,93,.16);
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),filter .28s var(--ease)}
+.footer a.soc-btn span{display:inline;font:inherit;color:inherit;margin:0}
+.footer a.soc-btn svg{display:block;width:20px;height:20px;flex:none}
+.footer a.soc-btn.soc-ig:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(214,36,159,.38);filter:saturate(1.15)}
+.footer a.soc-btn.soc-in:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(10,102,194,.42);filter:brightness(1.08)}
+html[data-theme="dark"] .footer-social-label{color:#8896ad}
+html[data-theme="dark"] .footer a.soc-btn{border-color:rgba(255,255,255,.14);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+/* footer links are styled as plain text links — keep the buttons white-on-brand */
+html[data-theme] .footer a.soc-btn,html[data-theme] .footer a.soc-btn:hover{color:#fff}
+
+/* mobile menu: labelled buttons side by side */
+@media (max-width:820px){
+  .nav-social{margin:6px 0 2px;padding:10px 6px 4px;border-top:1px solid rgba(18,50,93,.10);gap:10px}
+  html[data-theme="dark"] .nav-social{border-top-color:rgba(255,255,255,.10)}
+  .soc{flex:1;width:auto;height:46px;grid-auto-flow:column;gap:9px;justify-content:center}
+  .soc span{position:static;width:auto;height:auto;overflow:visible;clip:auto;font:700 13px/1 var(--font-ui);color:#fff}
+}
+
+/* keep the CTA on one line and make room on mid-size screens */
+.nav-cta{white-space:nowrap}
+@media (min-width:821px) and (max-width:1200px){
+  .brand{min-width:0}
+  .nav-wrap{gap:8px}
+  .nav-links{gap:0}
+  .nav-links > a,.nav-services-toggle{padding-left:9px;padding-right:9px}
+  .nav-social{margin:0 4px 0 6px;gap:6px}
+  .soc{width:36px;height:36px;border-radius:11px}
+  .soc svg{width:18px;height:18px}
+}
+@media (min-width:821px) and (max-width:980px){
+  .brand-word{font-size:11px;letter-spacing:.1em}
+  .nav-links > a,.nav-services-toggle{padding-left:7px;padding-right:7px;font-size:12px}
+}
+
+/* SOCIAL:END */
