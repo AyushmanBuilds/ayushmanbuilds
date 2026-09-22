@@ -1,0 +1,35 @@
+# Ayushmanbuilds
+
+> Ayushmanbuilds is an independent web development and digital agency run by Ayushman Acharya, a full-stack developer based in Bengaluru, Karnataka, India, serving clients in Berhampur (Brahmapur), Odisha and across India.
+
+Ayushman Acharya is Ayushmanbuilds' founder and lead developer — a full-stack developer and freelance digital growth specialist. He builds custom websites, e-commerce systems, web applications, SEO foundations and workflow automations for small and medium businesses (SMBs).
+
+## Who this is for
+Small and medium Indian businesses that need a website developer, digital agency, or software developer in Berhampur, Odisha, Bengaluru, or anywhere in India, including businesses looking for:
+- Full stack developer in Odisha / Berhampur
+- Website developer in Berhampur / Brahmapur
+- Software engineer in Berhampur
+- Digital agency Berhampur / Odisha
+- SEO services Berhampur
+- E-commerce website developer Odisha
+
+## Key pages
+- Home: https://ayushmanbuilds.vercel.app/
+- About Ayushman Acharya: https://ayushmanbuilds.vercel.app/about.html
+- Services overview: https://ayushmanbuilds.vercel.app/services.html
+- Website Development: https://ayushmanbuilds.vercel.app/service-website-development.html
+- SEO Optimization: https://ayushmanbuilds.vercel.app/service-seo-optimization.html
+- E-Commerce Solutions: https://ayushmanbuilds.vercel.app/service-ecommerce-solutions.html
+- Web Applications: https://ayushmanbuilds.vercel.app/service-web-applications.html
+- Website Revamps: https://ayushmanbuilds.vercel.app/service-website-revamps.html
+- Automation Workflows: https://ayushmanbuilds.vercel.app/service-automation-workflows.html
+- Berhampur developer page: https://ayushmanbuilds.vercel.app/website-developer-berhampur.html
+- Portfolio: https://ayushmanbuilds.vercel.app/portfolio.html
+- Testimonials: https://ayushmanbuilds.vercel.app/testimonials.html
+- Contact: https://ayushmanbuilds.vercel.app/contact.html
+
+## Contact
+Phone: +91 80180 17529
+GitHub: https://github.com/AyushmanBuilds
+Instagram: https://www.instagram.com/iamayushman.exe/
+LinkedIn: https://www.linkedin.com/in/ayushman-acharya-dev
